@@ -185,7 +185,7 @@
 	                { className: cls },
 	                _react2['default'].createElement(
 	                    'div',
-	                    { className: 'tMR10' },
+	                    { className: 'tMR10 tFieldLabel' },
 	                    t.props.label
 	                ),
 	                _react2['default'].createElement(

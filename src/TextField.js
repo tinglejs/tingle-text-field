@@ -21,7 +21,7 @@ class TextField extends React.Component {
 
         return (
             <div className={cls}>
-                <div className="tMR10">{t.props.label}</div>
+                <div className="tMR10 tFieldLabel">{t.props.label}</div>
                 <div className="tFB1">
                     <input className="tInput" placeholder={t.props.placeholder}
                      type="text" value={t.props.value} readOnly={t.props.readOnly}
