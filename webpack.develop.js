@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+
 module.exports = {
     cache: false,
     entry: {
@@ -20,7 +21,7 @@ module.exports = {
     },
     resolve: {
         alias: {
-            'tingle-xxx': __dirname + '/tingle/tingle-xxx/src' // 自定义位置
+            'tingle-group-list': __dirname + '/tingle/tingle-group-list/src' // 自定义位置
         }
     },
     externals: {

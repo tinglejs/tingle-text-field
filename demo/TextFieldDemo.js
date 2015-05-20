@@ -1,5 +1,6 @@
 import React from 'react';
 import {TextField} from '../src';
+import {GroupList} from 'tingle-group-list';
 
 // TODO: move the line to tingle-env
 React.initializeTouchEvents(true);
@@ -27,9 +28,20 @@ class Demo extends React.Component {
         var t = this;
         return (
             <div>
-                <TextField label="工号" placeholder="请输入"
-                 value={t.state.t1}
-                 onChange={t.handleChangeT1.bind(this)}/>
+                <GroupList className="tInputTAR">
+                    <TextField label="工号" placeholder="请输入工号请输入工号请输入工号"
+                     value={t.state.t1}
+                     onChange={t.handleChangeT1.bind(this)}/>
+                    <TextField label="工号"
+                     value="只读工号" readOnly={true}/>
+                </GroupList>
+                <GroupList>
+                    <TextField label="工号" placeholder="请输入工号请输入工号请输入工号"
+                     value={t.state.t1}
+                     onChange={t.handleChangeT1.bind(this)}/>
+                    <TextField label="工号"
+                     value="只读工号" readOnly={true}/>
+                </GroupList>
             </div>
         );
     }

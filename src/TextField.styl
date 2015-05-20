@@ -1,16 +1,29 @@
+topOffset=2px
+
 .tInput
     padding 0
     border none
     outline none
     width 100%
-    line-height 20px 
-.isAndroid .tInput
-    position relative
-    top -1px
-.isAndroid.isNotChrome .tInput
-    position relative
-    top 1px
+    line-height 20px
+    background-color transparent
+    z-index 2
+    position relative /*重要，解决UC、猎豹等浏览器z-index失效的问题*/ 
+.tInputTAR .tInput
+    text-align right 
 .tTextField
+    padding-top topOffset
     min-height 44px
 .tFieldLabel
     line-height 20px 
+.tFieldPlaceholder
+    position absolute
+    left 0
+    top 0
+    height 20px
+    line-height 20px
+    color #aaa
+    z-index 0
+.tInputTAR .tFieldPlaceholder
+    left auto
+    right 0
