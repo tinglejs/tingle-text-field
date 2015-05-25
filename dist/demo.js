@@ -58,22 +58,15 @@
 	
 	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
 	
-	var _react = __webpack_require__(2);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _src = __webpack_require__(3);
-	
-	var _tingleGroupList = __webpack_require__(4);
+	var TextField = __webpack_require__(2);
+	var GroupList = __webpack_require__(3);
 	
 	// TODO: move the line to tingle-env
-	_react2['default'].initializeTouchEvents(true);
+	React.initializeTouchEvents(true);
 	
 	var Demo = (function (_React$Component) {
 	    function Demo(props) {
@@ -88,9 +81,6 @@
 	    _inherits(Demo, _React$Component);
 	
 	    _createClass(Demo, [{
-	        key: 'componentDidMount',
-	        value: function componentDidMount() {}
-	    }, {
 	        key: 'handleChangeT1',
 	        value: function handleChangeT1(newValue) {
 	            console.log(newValue);
@@ -102,25 +92,25 @@
 	        key: 'render',
 	        value: function render() {
 	            var t = this;
-	            return _react2['default'].createElement(
+	            return React.createElement(
 	                'div',
 	                null,
-	                _react2['default'].createElement(
-	                    _tingleGroupList.GroupList,
+	                React.createElement(
+	                    GroupList,
 	                    { className: 'tInputTAR' },
-	                    _react2['default'].createElement(_src.TextField, { label: '工号', placeholder: '请输入工号请输入工号请输入工号',
+	                    React.createElement(TextField, { label: '工号', placeholder: '请输入工号请输入工号请输入工号',
 	                        value: t.state.t1,
-	                        onChange: t.handleChangeT1.bind(this) }),
-	                    _react2['default'].createElement(_src.TextField, { label: '工号',
+	                        onChange: t.handleChangeT1.bind(t) }),
+	                    React.createElement(TextField, { label: '工号',
 	                        value: '只读工号', readOnly: true })
 	                ),
-	                _react2['default'].createElement(
-	                    _tingleGroupList.GroupList,
+	                React.createElement(
+	                    GroupList,
 	                    null,
-	                    _react2['default'].createElement(_src.TextField, { label: '工号', placeholder: '请输入工号请输入工号请输入工号',
+	                    React.createElement(TextField, { label: '工号', placeholder: '请输入工号请输入工号请输入工号',
 	                        value: t.state.t1,
-	                        onChange: t.handleChangeT1.bind(this) }),
-	                    _react2['default'].createElement(_src.TextField, { label: '工号',
+	                        onChange: t.handleChangeT1.bind(t) }),
+	                    React.createElement(TextField, { label: '工号',
 	                        value: '只读工号', readOnly: true })
 	                )
 	            );
@@ -128,17 +118,19 @@
 	    }]);
 	
 	    return Demo;
-	})(_react2['default'].Component);
+	})(React.Component);
 	
 	;
 	
-	_react2['default'].render(_react2['default'].createElement(Demo, null), document.getElementById('TingleDemo'));
+	React.render(React.createElement(Demo, null), document.getElementById('TingleDemo'));
 
 /***/ },
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = React;
+	'use strict';
+	
+	module.exports = __webpack_require__(4);
 
 /***/ },
 /* 3 */
@@ -154,33 +146,15 @@
 
 	'use strict';
 	
-	module.exports = __webpack_require__(6);
-
-/***/ },
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, '__esModule', {
-	    value: true
-	});
-	
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 	
 	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
 	function _defineProperty(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
-	
-	var _react = __webpack_require__(2);
-	
-	var _react2 = _interopRequireDefault(_react);
 	
 	var TextField = (function (_React$Component) {
 	    function TextField(props) {
@@ -199,6 +173,7 @@
 	    }, {
 	        key: 'handleFocus',
 	        value: function handleFocus() {
+	            if (this.props.value.length) return;
 	            this.refs.placeholder.getDOMNode().style.display = 'none';
 	        }
 	    }, {
@@ -211,40 +186,40 @@
 	        key: 'render',
 	        value: function render() {
 	            var t = this;
-	            var cls = _react2['default'].addons.classSet;
+	            var cls = React.addons.classSet;
 	
-	            return _react2['default'].createElement(
+	            return React.createElement(
 	                'div',
 	                { className: cls(_defineProperty({
 	                        'tTextField tPR10 tFBH tFBAC': true }, t.props.className, !!t.props.className)) },
-	                _react2['default'].createElement(
+	                React.createElement(
 	                    'div',
 	                    { className: 'tMR10 tFieldLabel' },
 	                    t.props.label
 	                ),
-	                _react2['default'].createElement(
+	                React.createElement(
 	                    'div',
 	                    { className: 'tFB1 tPR' },
-	                    _react2['default'].createElement(
+	                    React.createElement(
 	                        'div',
 	                        { ref: 'placeholder', className: cls({
-	                                tFieldPlaceholder: true,
+	                                'tFieldPlaceholder tOmit': true,
 	                                tDN: !!t.props.value
 	                            }) },
 	                        t.props.placeholder
 	                    ),
-	                    _react2['default'].createElement('input', { className: 'tInput',
+	                    React.createElement('input', { className: 'tInput',
 	                        type: 'text', value: t.props.value, readOnly: t.props.readOnly,
-	                        onChange: t.handleChange.bind(this),
-	                        onFocus: t.handleFocus.bind(this),
-	                        onBlur: t.handleBlur.bind(this) })
+	                        onChange: t.handleChange.bind(t),
+	                        onFocus: t.handleFocus.bind(t),
+	                        onBlur: t.handleBlur.bind(t) })
 	                )
 	            );
 	        }
 	    }]);
 	
 	    return TextField;
-	})(_react2['default'].Component);
+	})(React.Component);
 	
 	TextField.defaultProps = {
 	    placeholder: '',
@@ -253,76 +228,66 @@
 	};
 	
 	TextField.propTypes = {
-	    label: _react2['default'].PropTypes.string.isRequired,
-	    readOnly: _react2['default'].PropTypes.bool,
-	    onChange: _react2['default'].PropTypes.func
+	    label: React.PropTypes.string.isRequired,
+	    readOnly: React.PropTypes.bool,
+	    onChange: React.PropTypes.func
 	};
 	
-	exports.TextField = TextField;
+	module.exports = TextField;
 
 /***/ },
-/* 6 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
-	Object.defineProperty(exports, '__esModule', {
-	    value: true
-	});
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 	
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-	
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 	
 	function _defineProperty(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); }
 	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
-	
-	var _react = __webpack_require__(2);
-	
-	var _react2 = _interopRequireDefault(_react);
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
 	
 	var GroupList = (function (_React$Component) {
 	    function GroupList(props) {
 	        _classCallCheck(this, GroupList);
 	
-	        _get(Object.getPrototypeOf(GroupList.prototype), 'constructor', this).call(this, props);
+	        _get(Object.getPrototypeOf(GroupList.prototype), "constructor", this).call(this, props);
 	    }
 	
 	    _inherits(GroupList, _React$Component);
 	
 	    _createClass(GroupList, [{
-	        key: 'render',
+	        key: "render",
 	        value: function render() {
 	            var t = this;
-	            var cls = _react2['default'].addons.classSet;
-	            var items = _react2['default'].Children.map(this.props.children, function (Item, index) {
-	                return _react2['default'].createElement(
-	                    'li',
-	                    { className: 'tGroupListItem' },
+	            var cls = React.addons.classSet;
+	            var items = React.Children.map(this.props.children, function (Item, index) {
+	                return React.createElement(
+	                    "li",
+	                    { className: "tGroupListItem" },
 	                    Item
 	                );
 	            });
 	
-	            return _react2['default'].createElement(
-	                'ul',
+	            return React.createElement(
+	                "ul",
 	                { className: cls(_defineProperty({
-	                        'tGroupList': true }, t.props.className, !!t.props.className)) },
+	                        "tGroupList": true }, t.props.className, !!t.props.className)) },
 	                items
 	            );
 	        }
 	    }]);
 	
 	    return GroupList;
-	})(_react2['default'].Component);
+	})(React.Component);
 	
 	GroupList.defaultProps = {};
 	
-	exports.GroupList = GroupList;
+	module.exports = GroupList;
 
 /***/ }
 /******/ ])

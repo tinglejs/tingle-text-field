@@ -1,5 +1,3 @@
-import React from 'react';
-
 class TextField extends React.Component {
 
     constructor(props) {
@@ -11,6 +9,7 @@ class TextField extends React.Component {
     }
 
     handleFocus() {
+        if (this.props.value.length) return;
         this.refs.placeholder.getDOMNode().style.display = 'none';
     }
 
@@ -31,14 +30,14 @@ class TextField extends React.Component {
                 <div className="tMR10 tFieldLabel">{t.props.label}</div>
                 <div className="tFB1 tPR">
                     <div ref="placeholder" className={cls({
-                        tFieldPlaceholder: true,
+                        'tFieldPlaceholder tOmit': true,
                         tDN: !!t.props.value
                     })}>{t.props.placeholder}</div>
                     <input className="tInput"
                      type="text" value={t.props.value} readOnly={t.props.readOnly}
-                     onChange={t.handleChange.bind(this)}
-                     onFocus={t.handleFocus.bind(this)}
-                     onBlur={t.handleBlur.bind(this)}/>
+                     onChange={t.handleChange.bind(t)}
+                     onFocus={t.handleFocus.bind(t)}
+                     onBlur={t.handleBlur.bind(t)}/>
                 </div>
             </div>
         );
@@ -57,4 +56,4 @@ TextField.propTypes = {
     onChange: React.PropTypes.func
 }
 
-export {TextField};
+module.exports = TextField;

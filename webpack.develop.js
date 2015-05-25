@@ -16,7 +16,7 @@ module.exports = {
     devtool: '#source-map', // 这个配置要和output.sourceMapFilename一起使用
     module: {
         loaders: [
-            {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'}
+            {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader?stage=1'}
         ]
     },
     resolve: {
