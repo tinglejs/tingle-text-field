@@ -1,3 +1,5 @@
+var classnames = require('classnames');
+
 class TextField extends React.Component {
 
     constructor(props) {
@@ -20,20 +22,19 @@ class TextField extends React.Component {
 
     render() {
         var t = this;
-        var cls = React.addons.classSet;
 
         return (
-            <div className={cls({
-                'tTextField tPR10 tFBH tFBAC': true,
+            <div className={classnames({
+                'tPL10 tPR10 tFBH tFBAC tFS14 tTextField ': true,
                 [t.props.className]: !!t.props.className
             })}>
-                <div className="tMR10 tFieldLabel">{t.props.label}</div>
-                <div className="tFB1 tPR">
-                    <div ref="placeholder" className={cls({
-                        'tFieldPlaceholder tOmit': true,
+                <div className="tMR10 tLH1_3 tFC6 tFieldLabel">{t.props.label}</div>
+                <div className="tFB1 tPR tFC9">
+                    <div ref="placeholder" className={classnames({
+                        'tOmit tFieldPlaceholder': true,
                         tDN: !!t.props.value
                     })}>{t.props.placeholder}</div>
-                    <input className="tInput"
+                    <input className="tInput tFC9"
                      type="text" value={t.props.value} readOnly={t.props.readOnly}
                      onChange={t.handleChange.bind(t)}
                      onFocus={t.handleFocus.bind(t)}

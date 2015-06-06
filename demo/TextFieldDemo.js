@@ -14,7 +14,6 @@ class Demo extends React.Component {
     }
 
     handleChangeT1(newValue) {
-        console.log(newValue);
         this.setState({
             t1: newValue
         });
@@ -24,15 +23,17 @@ class Demo extends React.Component {
         var t = this;
         return (
             <div>
-                <GroupList className="tInputTAR">
-                    <TextField label="工号" placeholder="请输入工号请输入工号请输入工号"
+                <GroupList>
+                    <TextField label="俩字" placeholder="请输入"
                      value={t.state.t1}
                      onChange={t.handleChangeT1.bind(t)}/>
-                    <TextField label="工号"
-                     value="只读工号" readOnly={true}/>
-                </GroupList>
-                <GroupList>
-                    <TextField label="工号" placeholder="请输入工号请输入工号请输入工号"
+                    <TextField label="三个字" placeholder="请输入"
+                     value={t.state.t1}
+                     onChange={t.handleChangeT1.bind(t)}/>
+                    <TextField label="四个文字" placeholder="请输入"
+                     value={t.state.t1}
+                     onChange={t.handleChangeT1.bind(t)}/>
+                    <TextField label="很多个文字" placeholder="请输入"
                      value={t.state.t1}
                      onChange={t.handleChangeT1.bind(t)}/>
                     <TextField label="工号"
