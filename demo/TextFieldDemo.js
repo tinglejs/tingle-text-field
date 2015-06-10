@@ -23,7 +23,7 @@ class Demo extends React.Component {
         var t = this;
         return (
             <div>
-                <GroupList>
+                <GroupList title="Label文字长度测试">
                     <TextField label="俩字" placeholder="请输入"
                      value={t.state.t1}
                      onChange={t.handleChangeT1.bind(t)}/>
@@ -36,6 +36,8 @@ class Demo extends React.Component {
                     <TextField label="很多个文字" placeholder="请输入"
                      value={t.state.t1}
                      onChange={t.handleChangeT1.bind(t)}/>
+                </GroupList>
+                <GroupList title="不可修改">
                     <TextField label="只读"
                      value="不能更改" readOnly={true}/>
                 </GroupList>

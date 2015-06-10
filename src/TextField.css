@@ -2,7 +2,7 @@
   padding: 0;
   border: none;
   outline: none;
-  width: 100px;
+  width: 100%;
   line-height: 20px;
   background-color: transparent;
   z-index: 2;
@@ -16,7 +16,7 @@
   min-height: 44px;
 }
 .tFieldLabel {
-  padding: 12px;
+  padding: 12px 0;
   width: 60px;
 }
 .tFieldPlaceholder {
