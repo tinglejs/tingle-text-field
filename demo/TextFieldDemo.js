@@ -36,8 +36,8 @@ class Demo extends React.Component {
                     <TextField label="很多个文字" placeholder="请输入"
                      value={t.state.t1}
                      onChange={t.handleChangeT1.bind(t)}/>
-                    <TextField label="工号"
-                     value="只读工号" readOnly={true}/>
+                    <TextField label="只读"
+                     value="不能更改" readOnly={true}/>
                 </GroupList>
             </div>
         );
