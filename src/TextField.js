@@ -1,3 +1,4 @@
+
 var classnames = require('classnames');
 
 class TextField extends React.Component {
@@ -10,14 +11,16 @@ class TextField extends React.Component {
         this.props.onChange(e.target.value);
     }
 
-    handleFocus() {
+    handleFocus(e) {
         if (this.props.value.length) return;
         this.refs.placeholder.getDOMNode().style.display = 'none';
+        this.props.onFocus();
     }
 
-    handleBlur() {
+    handleBlur(e) {
         if (this.props.value.length) return;
         this.refs.placeholder.getDOMNode().style.display = 'block';
+        this.props.onBlur();
     }
 
     render() {
@@ -48,13 +51,15 @@ class TextField extends React.Component {
 TextField.defaultProps = {
     placeholder: '',
     value:       '',
-    readOnly:    false
+    readOnly:    false,
 }
 
 TextField.propTypes = {
     label:    React.PropTypes.string.isRequired,
     readOnly: React.PropTypes.bool,
-    onChange: React.PropTypes.func
+    onChange: React.PropTypes.func,
+    onFocus: React.PropTypes.func,
+    onBlur: React.PropTypes.func
 }
 
 module.exports = TextField;
