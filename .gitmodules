@@ -1,6 +1,6 @@
-[submodule "tingle/tingle-style"]
-	path = tingle/tingle-style
-	url = https://github.com/tinglejs/tingle-style.git
 [submodule "tingle/tingle-group-list"]
 	path = tingle/tingle-group-list
 	url = https://github.com/tinglejs/tingle-group-list.git
+[submodule "tingle/tingle-context"]
+	path = tingle/tingle-context
+	url = git@github.com:tinglejs/tingle-context.git

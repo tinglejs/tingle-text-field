@@ -1,6 +1,9 @@
 
 var classnames = require('classnames');
 
+/**
+ * 
+ */
 class TextField extends React.Component {
 
     constructor(props) {

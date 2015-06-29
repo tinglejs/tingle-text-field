@@ -46,4 +46,4 @@ class Demo extends React.Component {
     }
 };
 
-React.render(<Demo/>, document.getElementById('TingleDemo'));
+module.exports = Demo;
