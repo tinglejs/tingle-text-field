@@ -1,8 +1,8 @@
-
+var Context = require('tingle-context');
 var classnames = require('classnames');
 
 /**
- * 
+ * TextField Component for Tingle
  */
 class TextField extends React.Component {
 
@@ -52,17 +52,21 @@ class TextField extends React.Component {
 }
 
 TextField.defaultProps = {
-    placeholder: '',
-    value:       '',
+    onChange:    Context.noop,
+    onFocus:     Context.noop,
+    onBlur:      Context.noop,
     readOnly:    false,
+    placeholder: '',
+    value:       ''
 }
 
 TextField.propTypes = {
-    label:    React.PropTypes.string.isRequired,
-    readOnly: React.PropTypes.bool,
-    onChange: React.PropTypes.func,
-    onFocus: React.PropTypes.func,
-    onBlur: React.PropTypes.func
+    label:       React.PropTypes.string.isRequired,
+    onChange:    React.PropTypes.func,
+    onFocus:     React.PropTypes.func,
+    onBlur:      React.PropTypes.func,
+    readOnly:    React.PropTypes.bool,
+    placeholder: React.PropTypes.string
 }
 
 module.exports = TextField;

@@ -5,7 +5,7 @@ module.exports = {
         demo: './demo/index'
     },
     output: {
-        path: './dist', 
+        path: './dist',
         filename: "[name].js",
         sourceMapFilename: "[name].js.map"
     },
@@ -17,6 +17,7 @@ module.exports = {
     },
     resolve: {
         alias: {
+            'tingle-context': __dirname + '/tingle/tingle-context/src', // 自定义别名
             'tingle-group-list': __dirname + '/tingle/tingle-group-list/src' // 自定义别名
         }
     },
