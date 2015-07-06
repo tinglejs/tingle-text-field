@@ -11,19 +11,26 @@ class TextField extends React.Component {
     }
 
     handleChange(e) {
-        this.props.onChange(e.target.value);
+        var value = this.props.filter(e.target.value);
+        this.props.onChange(value);
     }
 
     handleFocus(e) {
-        if (this.props.value.length) return;
-        this.refs.placeholder.getDOMNode().style.display = 'none';
-        this.props.onFocus();
+        var t = this;
+        t.props.onFocus(t.props.value);
+
+        // 处理placeholder
+        if (t.props.value.length) return;
+        t.refs.placeholder.getDOMNode().style.display = 'none';
     }
 
     handleBlur(e) {
-        if (this.props.value.length) return;
-        this.refs.placeholder.getDOMNode().style.display = 'block';
-        this.props.onBlur();
+        var t = this;
+        t.props.onBlur(t.props.value);
+
+        // 处理placeholder
+        if (t.props.value.length) return;
+        t.refs.placeholder.getDOMNode().style.display = 'block';
     }
 
     render() {
@@ -52,6 +59,7 @@ class TextField extends React.Component {
 }
 
 TextField.defaultProps = {
+    filter:      function (v) {return v;},
     onChange:    Context.noop,
     onFocus:     Context.noop,
     onBlur:      Context.noop,
@@ -61,6 +69,7 @@ TextField.defaultProps = {
 }
 
 TextField.propTypes = {
+    filter:      React.PropTypes.func,
     label:       React.PropTypes.string.isRequired,
     onChange:    React.PropTypes.func,
     onFocus:     React.PropTypes.func,
