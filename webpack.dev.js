@@ -1,4 +1,20 @@
+var fs = require('fs');
 var webpack = require('webpack');
+
+// 扫描tingle目录下的所有module
+function getTingleModuleAlias() {
+    var alias = {};
+
+    // 判断是否存在tingle目录
+    if (!fs.existsSync(__dirname + '/tingle')) return alias;
+
+    var modules = fs.readdirSync(__dirname + '/tingle');
+    modules.forEach(function (name) {
+        alias[name] = [__dirname, 'tingle', name, 'src'].join('/');
+    });
+    return alias;
+}
+
 module.exports = {
     cache: false,
     entry: {
@@ -12,14 +28,20 @@ module.exports = {
     devtool: '#source-map', // 这个配置要和output.sourceMapFilename一起使用
     module: {
         loaders: [
-            {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader?stage=1'}
+            {
+                test: /\.js$/,
+                // tingle以外的modules都不需要经过babel解析
+                exclude: function (path) {
+                    var isNpmModule = !!path.match(/node_modules/);
+                    var isTingleModule = !!path.match(/node_modules\/tingle/);
+                    return isNpmModule && !isTingleModule;
+                },
+                loader: 'babel-loader?stage=1'
+            }
         ]
     },
     resolve: {
-        alias: {
-            'tingle-context': __dirname + '/tingle/tingle-context/src', // 自定义别名
-            'tingle-group-list': __dirname + '/tingle/tingle-group-list/src' // 自定义别名
-        }
+        alias: getTingleModuleAlias()
     },
     externals: {
         react: 'var React' // 相当于把全局的React作为模块的返回 module.exports = React;

@@ -45,16 +45,16 @@ class Demo extends React.Component {
         return (
             <div>
                 <GroupList title="Label文字长度测试">
-                    <TextField label="俩字" placeholder="请输入"
+                    <TextField label="标题标题" placeholder="请输入"
                      value={t.state.text}
                      onChange={t.handleTextChange.bind(t)}/>
-                    <TextField label="三个字" placeholder="请输入"
+                    <TextField label="标题文案" placeholder="请输入"
                      value={t.state.text}
                      onChange={t.handleTextChange.bind(t)}/>
-                    <TextField label="四个文字" placeholder="请输入"
+                    <TextField label="标题文字" placeholder="请输入"
                      value={t.state.text}
                      onChange={t.handleTextChange.bind(t)}/>
-                    <TextField label="很多个文字" placeholder="请输入"
+                    <TextField label="标题标题" placeholder="请输入"
                      value={t.state.text}
                      onChange={t.handleTextChange.bind(t)}/>
                     <TextField label="仅限数字" placeholder="请输入"
@@ -63,9 +63,19 @@ class Demo extends React.Component {
                      onBlur={t.handleNumberBlur.bind(t)}
                      onChange={t.handleNumberChange.bind(t)}/>
                 </GroupList>
+                <GroupList title="输入多行">
+                    <TextField label="标题文字" placeholder="支持多行文本输入" multiLine={true}
+                     value={t.state.text}
+                     onChange={t.handleTextChange.bind(t)}/>
+                </GroupList>
                 <GroupList title="不可修改">
                     <TextField label="只读"
                      value="不能更改" readOnly={true}/>
+                </GroupList>
+                <GroupList title="上下结构">
+                    <TextField placeholder="请输入"
+                     value={t.state.text}
+                     onChange={t.handleTextChange.bind(t)}/>
                 </GroupList>
             </div>
         );
