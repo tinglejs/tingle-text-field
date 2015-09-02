@@ -1,8 +1,13 @@
 {
-  "name": "tingle-mask",
-  "version": "0.0.0",
-  "description": "",
-  "repository": "https://github.com/tinglejs/tingle-mask.git",
+  "name": "tingle-text-field",
+  "version": "0.0.1",
+  "description": "常用表单文本域",
+  "repository": "git@github.com:tinglejs/tingle-text-field.git",
+  "author": {
+    "name": "gnosaij",
+    "email": ""
+  },
+  "main": "src/index.js",
   "files": [
     "dist",
     "README.md"
@@ -23,7 +28,9 @@
     "gulp": "^3.9.0",
     "tingle-dev-tools": "latest"
   },
-  "scripts": {},
-  "author": "gnosaij",
-  "license": "MIT"
+  "scripts": {
+    "start": "gulp d"
+  },
+  "license": "MIT",
+  "screenshots": "http://g01.alibaba-inc.com/tfscom/TB1.guQIVXXXXXbXpXXXXXXXXXX.tfsprivatepng_670x670.jpg"
 }

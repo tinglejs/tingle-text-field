@@ -1,3 +1,3 @@
-var Context = require('tingle-context');
-var Demo = require('./TextFieldDemo');
+let Context = require('tingle-context');
+let Demo = require('./TextFieldDemo');
 React.render(<Demo/>, document.getElementById('TingleDemo'));

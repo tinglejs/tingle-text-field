@@ -5,10 +5,10 @@
  * Copyright 2014-2015, Tingle Team, Alinw.
  * All rights reserved.
  */
-var Context = require('tingle-context');
-var Field = require('tingle-field');
-var Icon = require('tingle-icon');
-var classnames = require('classnames');
+let Context = require('tingle-context');
+let Field = require('tingle-field');
+let Icon = require('tingle-icon');
+let classnames = require('classnames');
 
 class TextField extends React.Component {
 
@@ -17,12 +17,12 @@ class TextField extends React.Component {
     }
 
     handleChange(e) {
-        var value = this.props.filter(e.target.value);
+        let value = this.props.filter(e.target.value);
         this.props.onChange(value);
     }
 
     handleFocus(e) {
-        var t = this;
+        let t = this;
         t.props.onFocus(t.props.value);
 
         // 处理placeholder
@@ -31,7 +31,7 @@ class TextField extends React.Component {
     }
 
     handleBlur(e) {
-        var t = this;
+        let t = this;
         t.props.onBlur(t.props.value);
 
         // 处理placeholder
@@ -45,7 +45,7 @@ class TextField extends React.Component {
     }
 
     render() {
-        var t = this;
+        let t = this;
 
         return <Field {...t.props} className={classnames('tTextField', t.props.className, {
             'multiline': t.props.multiLine
@@ -107,5 +107,7 @@ TextField.propTypes = {
     multiLine:   React.PropTypes.bool,
     type:        React.PropTypes.string,
 }
+
+TextField.displayName = 'TextField';
 
 module.exports = TextField;

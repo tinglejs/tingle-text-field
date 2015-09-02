@@ -1,7 +1,7 @@
-var GroupList = require('tingle-group-list');
-var TextField = require('../src');
+let GroupList = require('tingle-group-list');
+let TextField = require('../src');
 
-var numberRegExp = /^(\d+\.\d*)|(\d+\.)|\d+/;
+let numberRegExp = /^(\d+\.\d*)|(\d+\.)|\d+/;
 
 class Demo extends React.Component {
 
@@ -26,8 +26,8 @@ class Demo extends React.Component {
     }
 
     numberFilter(originValue) {
-        var matches = originValue.match(numberRegExp);
-        var number = '';
+        let matches = originValue.match(numberRegExp);
+        let number = '';
         if(matches) {
             number =  matches[0];
         }
@@ -41,7 +41,7 @@ class Demo extends React.Component {
     }
 
     render() {
-        var t = this;
+        let t = this;
         return (
             <div>
                 <GroupList title="Label文字长度测试">

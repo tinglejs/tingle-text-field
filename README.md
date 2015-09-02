@@ -1,16 +1,3 @@
-# TextField Input输入框
-
-- name: tingle-text-field
-- category: tingle
-- tags: tingle,field,textfield,文本输入框
-- description: 单行文本输入框。
-- maintainers: 拂山(74803)
-- version: 1.0.0
-- lastupdate: 2015-08-04
-- screenshots: http://g01.alibaba-inc.com/tfscom/TB1.guQIVXXXXXbXpXXXXXXXXXX.tfsprivatepng_670x670.jpg
-
----
-
 ## TL;DR
 
 单行文本输入框。
@@ -36,7 +23,7 @@ class Demo extends React.Component {
     }
 
     render() {
-        var t = this;
+        let t = this;
         return (
             <TextField label="俩字" placeholder="请输入"
              value={t.state.text}
@@ -69,5 +56,4 @@ class Demo extends React.Component {
 
 ## Links 相关链接
 
-- [Fire a bug/Issues 提Bug](http://gitlab.alibaba-inc.com/alinwmobile/tingle-text-field/issues)
-- [Tingle项目](http://gitlab.alibaba-inc.com/alinwmobile/tingle/tree/master)
+- [Fire a bug/Issues 提Bug](http://github.com/tinglejs/tingle-text-field/issues)
