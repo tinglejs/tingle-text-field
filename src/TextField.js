@@ -40,6 +40,7 @@ class TextField extends React.Component {
     }
 
     handleClear(e) {
+        let t = this;
         this.props.onChange('');
         React.findDOMNode(t.refs.placeholder).style.display = 'block';
     }
