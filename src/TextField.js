@@ -27,7 +27,7 @@ class TextField extends React.Component {
 
         // 处理placeholder
         if (t.props.value.length) return;
-        t.refs.placeholder.getDOMNode().style.display = 'none';
+        React.findDOMNode(t.refs.placeholder).style.display = 'none';
     }
 
     handleBlur(e) {
@@ -36,12 +36,12 @@ class TextField extends React.Component {
 
         // 处理placeholder
         if (t.props.value.length) return;
-        t.refs.placeholder.getDOMNode().style.display = 'block';
+        React.findDOMNode(t.refs.placeholder).style.display = 'block';
     }
 
     handleClear(e) {
         this.props.onChange('');
-        this.refs.placeholder.getDOMNode().style.display = 'block';
+        React.findDOMNode(t.refs.placeholder).style.display = 'block';
     }
 
     render() {
