@@ -1,6 +1,6 @@
 /**
  * Mask Component Style for tingle
- * @auther undefined
+ * @author gnosaij
  *
  * Copyright 2014-2015, Tingle Team, Alinw.
  * All rights reserved.
@@ -32,6 +32,7 @@
   outline: none;
   color: #424242;
   width: 100%;
+  padding-right: 1.066666666666667rem;
   line-height: 0.533333333333333rem;
   background-color: transparent;
   z-index: 2;
@@ -50,17 +51,20 @@
 /* add clear input icon */
 .tTextFieldIcon {
   position: absolute;
-  top: -0.026666666666667rem;
+  top: -0.32rem;
   right: 0;
-  z-index: 1000;
+  z-index: 10;
   display: inline-block;
-  width: 0.533333333333333rem;
-  height: 0.533333333333333rem;
+  padding-left: 0.08rem;
+  width: 0.933333333333333rem;
+  height: 1.173333333333333rem;
   line-height: 0.533333333333333rem;
 }
 .tTextFieldIcon .tIcon {
-  width: 0.373333333333333rem;
-  height: 0.373333333333333rem;
+  position: absolute;
+  top: 0.4rem;
+  width: 0.44rem;
+  height: 0.44rem;
   fill: #bbb;
 }
 

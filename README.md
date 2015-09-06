@@ -1,16 +1,14 @@
-# tingle-text-field 
-
---- 
+# tingle-text-field
 
 ## TL;DR
 
 单行文本输入框。
 
-![效果图](http://gtms02.alicdn.com/tps/i2/TB1OviVJpXXXXaAXFXXE9WD1XXX-319-137.jpg)
+![效果图](https://gtms02.alicdn.com/tps/i2/TB1OviVJpXXXXaAXFXXE9WD1XXX-319-137.jpg_200x200.jpg)
 
 ## Simple Usage
 
-```
+```javascript
 class Demo extends React.Component {
 
     constructor(props) {
@@ -60,4 +58,4 @@ class Demo extends React.Component {
 
 ## Links 相关链接
 
-- [Fire a bug/Issues 提Bug](http://github.com/tinglejs/tingle-text-field/issues)
+- [Fire a bug/Issues 提Bug](https://github.com/tinglejs/tingle-text-field/issues)

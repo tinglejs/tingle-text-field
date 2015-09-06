@@ -16,7 +16,7 @@
     "classnames": "^2.1.2",
     "fastclick": "~1.0.6",
     "react": "^0.13.3",
-    "tingle-context": "~0.1.0",
+    "tingle-context": "^0.1.0",
     "tingle-style": "~0.0.1",
     "tingle-icon": "~0.0.2",
     "tingle-group-list": "latest",
@@ -32,5 +32,5 @@
     "start": "gulp d"
   },
   "license": "MIT",
-  "screenshots": "http://gtms02.alicdn.com/tps/i2/TB1OviVJpXXXXaAXFXXE9WD1XXX-319-137.jpg"
+  "screenshots": "https://gtms02.alicdn.com/tps/i2/TB1OviVJpXXXXaAXFXXE9WD1XXX-319-137.jpg"
 }

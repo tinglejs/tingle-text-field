@@ -1,6 +1,6 @@
 /**
  * Field Component for tingle
- * @auther gnosaij
+ * @author gnosaij
  *
  * Copyright 2014-2015, Tingle Team, Alinw.
  * All rights reserved.
@@ -26,7 +26,9 @@ class TextField extends React.Component {
         t.props.onFocus(t.props.value);
 
         // 处理placeholder
-        if (t.props.value.length) return;
+        if (t.props.value.length) {
+            return;
+        }
         React.findDOMNode(t.refs.placeholder).style.display = 'none';
     }
 
@@ -35,14 +37,22 @@ class TextField extends React.Component {
         t.props.onBlur(t.props.value);
 
         // 处理placeholder
-        if (t.props.value.length) return;
+        if (t.props.value.length) {
+            return;
+        }
         React.findDOMNode(t.refs.placeholder).style.display = 'block';
     }
 
     handleClear(e) {
+
         let t = this;
+
+        // TODO fix iOS blur bug
+        //setTimeout(()=> {
+        React.findDOMNode(t.refs.input).focus();
+        //}, 40);
+
         this.props.onChange('');
-        React.findDOMNode(t.refs.placeholder).style.display = 'block';
     }
 
     render() {
@@ -54,60 +64,60 @@ class TextField extends React.Component {
             <div ref="placeholder" className={classnames('tOmit tTextFieldPlaceholder', {
                 tDN: !!t.props.value
             })}>{t.props.placeholder}</div>
-
             {
                 t.props.multiLine ?
-                <textarea className="tTextFieldInput" value={t.props.value} readOnly={t.props.readOnly}
-                 onChange={t.handleChange.bind(t)}
-                 onFocus={t.handleFocus.bind(t)}
-                 onBlur={t.handleBlur.bind(t)}/>
-                 :
-                 <input className="tTextFieldInput"
-                 type={t.props.type} value={t.props.value} readOnly={t.props.readOnly}
-                 onChange={t.handleChange.bind(t)}
-                 onFocus={t.handleFocus.bind(t)}
-                 onBlur={t.handleBlur.bind(t)}/>
-            }
+                    <textarea ref="input" className="tTextFieldInput" value={t.props.value} readOnly={t.props.readOnly}
+                        onChange={t.handleChange.bind(t)}
+                        onFocus={t.handleFocus.bind(t)}
+                        onBlur={t.handleBlur.bind(t)}/>
+                    :
+                    <input ref="input" className="tTextFieldInput"
+                        type={t.props.type} value={t.props.value} readOnly={t.props.readOnly}
+                        onChange={t.handleChange.bind(t)}
+                        onFocus={t.handleFocus.bind(t)}
+                        onBlur={t.handleBlur.bind(t)}/>
+                }
             
             {
                 !t.props.readOnly ?
-                <span className={classnames('tTextFieldIcon', {
-                    tDN: !t.props.value
-                })} onClick={t.handleClear.bind(t)}>
-                    <Icon id="tingle-text-field-clear"/>
-                </span> : ''
-            }
-             
+                    <span className={classnames('tTextFieldIcon', {
+                        tDN: !t.props.value
+                    })} onClick={t.handleClear.bind(t)}>
+                        <Icon id="tingle-text-field-clear"/>
+                    </span> : ''
+                }
         </Field>
     }
 }
 
 TextField.defaultProps = {
-    className:   '',
-    filter:      function (v) {return v;},
-    label:       '',
-    onChange:    Context.noop,
-    onFocus:     Context.noop,
-    onBlur:      Context.noop,
+    className: '',
+    filter: (v) => {
+        return v;
+    },
+    label: '',
+    onChange: Context.noop,
+    onFocus: Context.noop,
+    onBlur: Context.noop,
     placeholder: '',
-    readOnly:    false,
-    multiLine:   false,
-    type:        'text',
-    value:       '',
-}
+    readOnly: false,
+    multiLine: false,
+    type: 'text',
+    value: ''
+};
 
 TextField.propTypes = {
-    className:   React.PropTypes.string,
-    filter:      React.PropTypes.func,
-    label:       React.PropTypes.string,
-    onChange:    React.PropTypes.func,
-    onFocus:     React.PropTypes.func,
-    onBlur:      React.PropTypes.func,
+    className: React.PropTypes.string,
+    filter: React.PropTypes.func,
+    label: React.PropTypes.string,
+    onChange: React.PropTypes.func,
+    onFocus: React.PropTypes.func,
+    onBlur: React.PropTypes.func,
     placeholder: React.PropTypes.string,
-    readOnly:    React.PropTypes.bool,
-    multiLine:   React.PropTypes.bool,
-    type:        React.PropTypes.string,
-}
+    readOnly: React.PropTypes.bool,
+    multiLine: React.PropTypes.bool,
+    type: React.PropTypes.string,
+};
 
 TextField.displayName = 'TextField';
 

@@ -1,6 +1,6 @@
 /**
  * Mask Component for tingle
- * @auther undefined
+ * @author gnosaij
  *
  * Copyright 2014-2015, Tingle Team, Alinw.
  * All rights reserved.
