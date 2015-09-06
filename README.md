@@ -1,8 +1,12 @@
+# tingle-text-field 
+
+--- 
+
 ## TL;DR
 
 单行文本输入框。
 
-![效果图](http://g01.alibaba-inc.com/tfscom/TB1.guQIVXXXXXbXpXXXXXXXXXX.tfsprivatepng_670x670.jpg)
+![效果图](http://gtms02.alicdn.com/tps/i2/TB1OviVJpXXXXaAXFXXE9WD1XXX-319-137.jpg)
 
 ## Simple Usage
 
