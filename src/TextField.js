@@ -77,7 +77,7 @@ class TextField extends React.Component {
                         onFocus={t.handleFocus.bind(t)}
                         onBlur={t.handleBlur.bind(t)}/>
                 }
-            
+
             {
                 !t.props.readOnly ?
                     <span className={classnames('tTextFieldIcon', {
