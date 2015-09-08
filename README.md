@@ -1,4 +1,4 @@
-# tingle-text-field
+# tingle-text-field [![npm version](https://badge.fury.io/js/tingle-text-field.svg)](http://badge.fury.io/js/tingle-text-field)
 
 ## TL;DR
 
