@@ -59,7 +59,8 @@ class TextField extends React.Component {
         let t = this;
 
         return <Field {...t.props} className={classnames('tTextField', t.props.className, {
-            'multiline': t.props.multiLine
+            'multiline': t.props.multiLine,
+            'readOnly': t.props.readOnly
         })}>
             <div ref="placeholder" className={classnames('tOmit tTextFieldPlaceholder', {
                 tDN: !!t.props.value
