@@ -5,8 +5,11 @@
   "repository": "git@github.com:tinglejs/tingle-text-field.git",
   "author": {
     "name": "gnosaij",
-    "email": ""
+    "email": "gnosaij@yeah.net"
   },
+  "maintainers":[
+    "yize <yize.shc@gmail.com>"
+  ],
   "main": "src/index.js",
   "files": [
     "src",
