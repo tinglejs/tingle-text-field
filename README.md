@@ -4,7 +4,7 @@
 
 单行文本输入框。
 
-![效果图](https://gtms02.alicdn.com/tps/i2/TB1OviVJpXXXXaAXFXXE9WD1XXX-319-137.jpg_200x200.jpg)
+<img src="https://img.alicdn.com/tps/TB14TfJJpXXXXcWXVXXXXXXXXXX-750-1254.png" width="375"/>
 
 ## Simple Usage
 

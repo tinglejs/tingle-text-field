@@ -8,21 +8,19 @@
 @require '../node_modules/tingle-style/src/var'
 
 .tTextField
-    min-height rem(88)
-
     /* support multiple line input */
     &.multiline
-        height rem(185)
+        height 93px
 
         .tFieldBox
-            padding-top rem(22)
+            padding-top 11px
 
         .tTextFieldPlaceholder
-            top rem(26)
+            top 13px
 
         .tTextFieldInput
             resize none
-            height rem(150)
+            height 75px
             line-height 1.5
 
         .tTextFieldIcon
@@ -34,8 +32,8 @@
     outline none
     color #424242
     width 100%
-    padding-right rem(80)
-    line-height rem(40)
+    padding-right 23px
+    line-height 20px
     background-color transparent
     z-index 2
     position relative /*重要，解决UC、猎豹等浏览器z-index失效的问题*/
@@ -46,28 +44,28 @@
     left 0
     top 0
     max-width 100%
-    height rem(40)
-    line-height rem(40)
+    height 20px
+    line-height 20px
     color #bdbdbd
     z-index 0
 
 /* add clear input icon */
 .tTextFieldIcon
     position absolute
-    top rem(-24)
+    top -12px
     right 0
     z-index 10
     display inline-block
-    padding-left rem(6)
-    width rem(70)
-    height rem(88)
-    line-height rem(40)
+    padding-left 3px
+    width 35px
+    height 44px
+    line-height 20px
 
     .tIcon
         position absolute
-        top rem(30)
-        width rem(33)
-        height rem(33)
+        top 14px
+        width 17px
+        height 17px
         fill #bbb
 
 .readOnly
