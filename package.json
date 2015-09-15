@@ -15,6 +15,13 @@
     "src",
     "README.md"
   ],
+  "keywords": [
+    "tingle-tab",
+    "input",
+    "text",
+    "文本框",
+    "tingle"
+  ],
   "dependencies": {
     "classnames": "^2.1.2",
     "tingle-context": "~0.1.0",
