@@ -25,8 +25,7 @@ class TextField extends React.Component {
         let t = this;
         t.props.onFocus(t.props.value);
 
-        // 处理placeholder
-        if (t.props.value.length) {
+        if (t.props.value.length || t.props.readOnly) {
             return;
         }
         React.findDOMNode(t.refs.placeholder).style.display = 'none';
@@ -36,8 +35,7 @@ class TextField extends React.Component {
         let t = this;
         t.props.onBlur(t.props.value);
 
-        // 处理placeholder
-        if (t.props.value.length) {
+        if (t.props.value.length || t.props.readOnly) {
             return;
         }
         React.findDOMNode(t.refs.placeholder).style.display = 'block';
