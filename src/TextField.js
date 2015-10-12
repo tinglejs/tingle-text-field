@@ -18,7 +18,7 @@ class TextField extends React.Component {
 
     handleChange(e) {
         let value = this.props.filter(e.target.value);
-        this.props.onChange(value);
+        this.props.onChange(value,e);
     }
 
     handleFocus(e) {
@@ -33,7 +33,7 @@ class TextField extends React.Component {
 
     handleBlur(e) {
         let t = this;
-        t.props.onBlur(t.props.value);
+        t.props.onBlur(t.props.value,e);
 
         if (t.props.value.length || t.props.readOnly) {
             return;
