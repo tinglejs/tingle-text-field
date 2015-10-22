@@ -5,30 +5,12 @@
  * Copyright 2014-2015, Tingle Team, Alinw.
  * All rights reserved.
  */
-.tTextField.multiline {
-  height: 93px;
-}
-.tTextField.multiline .tFieldBox {
-  padding-top: 11px;
-}
-.tTextField.multiline .tTextFieldPlaceholder {
-  top: 13px;
-}
-.tTextField.multiline .tTextFieldInput {
-  resize: none;
-  height: 75px;
-  line-height: 1.5;
-}
-.tTextField.multiline .tTextFieldIcon {
-  display: none;
-}
 .tTextFieldInput {
   padding: 0;
   border: none;
   outline: none;
   color: #424242;
   width: 100%;
-  padding-right: 23px;
   line-height: 20px;
   background-color: transparent;
   z-index: 2;
@@ -43,25 +25,6 @@
   line-height: 20px;
   color: #bdbdbd;
   z-index: 0;
-}
-/* add clear input icon */
-.tTextFieldIcon {
-  position: absolute;
-  top: -12px;
-  right: 0;
-  z-index: 10;
-  display: inline-block;
-  padding-left: 3px;
-  width: 35px;
-  height: 44px;
-  line-height: 20px;
-}
-.tTextFieldIcon .tIcon {
-  position: absolute;
-  top: 14px;
-  width: 17px;
-  height: 17px;
-  fill: #bbb;
 }
 .readOnly .tTextFieldInput {
   color: #bdbdbd;

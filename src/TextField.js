@@ -25,7 +25,7 @@ class TextField extends React.Component {
         let t = this;
         t.props.onFocus(t.props.value);
 
-        if (t.props.value.length || t.props.readOnly) {
+        if (t.props.value !== '' || t.props.readOnly) {
             return;
         }
         React.findDOMNode(t.refs.placeholder).style.display = 'none';
@@ -35,56 +35,26 @@ class TextField extends React.Component {
         let t = this;
         t.props.onBlur(t.props.value,e);
 
-        if (t.props.value.length || t.props.readOnly) {
+        if (t.props.value !== '' || t.props.readOnly) {
             return;
         }
         React.findDOMNode(t.refs.placeholder).style.display = 'block';
-    }
-
-    handleClear(e) {
-
-        let t = this;
-
-        // TODO fix iOS blur bug
-        //setTimeout(()=> {
-        React.findDOMNode(t.refs.input).focus();
-        //}, 40);
-
-        this.props.onChange('');
     }
 
     render() {
         let t = this;
 
         return <Field {...t.props} className={classnames('tTextField', t.props.className, {
-            'multiline': t.props.multiLine,
             'readOnly': t.props.readOnly
         })}>
             <div ref="placeholder" className={classnames('tOmit tTextFieldPlaceholder', {
-                tDN: !!t.props.value
+                tDN: t.props.value !== ''
             })}>{t.props.placeholder}</div>
-            {
-                t.props.multiLine ?
-                    <textarea ref="input" className="tTextFieldInput" value={t.props.value} readOnly={t.props.readOnly}
-                        onChange={t.handleChange.bind(t)}
-                        onFocus={t.handleFocus.bind(t)}
-                        onBlur={t.handleBlur.bind(t)}/>
-                    :
-                    <input ref="input" className="tTextFieldInput"
-                        type={t.props.type} value={t.props.value} readOnly={t.props.readOnly}
-                        onChange={t.handleChange.bind(t)}
-                        onFocus={t.handleFocus.bind(t)}
-                        onBlur={t.handleBlur.bind(t)}/>
-                }
-
-            {
-                !t.props.readOnly ?
-                    <span className={classnames('tTextFieldIcon', {
-                        tDN: !t.props.value
-                    })} onClick={t.handleClear.bind(t)}>
-                        <Icon id="tingle-text-field-clear"/>
-                    </span> : ''
-                }
+            <input ref="input" className="tTextFieldInput"
+                type={t.props.type} value={t.props.value} readOnly={t.props.readOnly}
+                onChange={t.handleChange.bind(t)}
+                onFocus={t.handleFocus.bind(t)}
+                onBlur={t.handleBlur.bind(t)}/>
         </Field>
     }
 }
@@ -100,7 +70,6 @@ TextField.defaultProps = {
     onBlur: Context.noop,
     placeholder: '',
     readOnly: false,
-    multiLine: false,
     type: 'text',
     value: ''
 };
@@ -114,7 +83,6 @@ TextField.propTypes = {
     onBlur: React.PropTypes.func,
     placeholder: React.PropTypes.string,
     readOnly: React.PropTypes.bool,
-    multiLine: React.PropTypes.bool,
     type: React.PropTypes.string,
 };
 

@@ -49,12 +49,19 @@ class Demo extends React.Component {
 |onBlur|optional|-|失去焦点时的回调，第一个参数是当前值，第二个参数是e|
 |placeholder|optional|-|水印提示|
 |readOnly|optional|false|布尔值，设置是否是只读状态|
-|multiLine|optional|false|布尔值，设置是否是多行输入框|
 |value|required|-|输入框的值|
 
 > 所有props都是可选的。
 
 > text-field组件本身是没有背景色的，通常会配合GroupList一起使用。
+
+## 更新历史
+
+v0.2.1 - 10月22日
+
+* 删除`multiLine`的配置
+* 删除`clear`功能
+* 修复 [#9](https://github.com/tinglejs/tingle-text-field/issues/9)
 
 ## Links 相关链接
 

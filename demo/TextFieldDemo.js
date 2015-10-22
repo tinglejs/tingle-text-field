@@ -63,11 +63,6 @@ class Demo extends React.Component {
                         onBlur={t.handleNumberBlur.bind(t)}
                         onChange={t.handleNumberChange.bind(t)}/>
                 </GroupList>
-                <GroupList title="输入多行">
-                    <TextField label="标题文字" placeholder="支持多行文本输入" multiLine={true}
-                        value={t.state.text}
-                        onChange={t.handleTextChange.bind(t)}/>
-                </GroupList>
                 <GroupList title="不可修改">
                     <TextField label="只读"
                         value="不能更改" readOnly={true}/>
