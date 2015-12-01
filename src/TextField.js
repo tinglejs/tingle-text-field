@@ -24,21 +24,11 @@ class TextField extends React.Component {
     handleFocus(e) {
         let t = this;
         t.props.onFocus(t.props.value);
-
-        if (t.props.value !== '' || t.props.readOnly) {
-            return;
-        }
-        //React.findDOMNode(t.refs.placeholder).style.display = 'none';
     }
 
     handleBlur(e) {
         let t = this;
         t.props.onBlur(t.props.value,e);
-
-        if (t.props.value !== '' || t.props.readOnly) {
-            return;
-        }
-        //React.findDOMNode(t.refs.placeholder).style.display = 'block';
     }
 
     render() {
