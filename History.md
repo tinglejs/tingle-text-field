@@ -1,3 +1,8 @@
+0.2.2 / 2015-12-1
+==================
+
+ * keep placeholder when input is focusing and the value is empty, like the OS performance (Android / iOS).
+
 
 0.2.0 / 2015-09-10
 ==================
