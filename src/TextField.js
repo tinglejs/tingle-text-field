@@ -38,7 +38,7 @@ class TextField extends React.Component {
             'readOnly': t.props.readOnly
         })}>
             <div ref="placeholder" className={classnames('tOmit tTextFieldPlaceholder', {
-                tDN: t.props.value !== ''
+                tDN: t.props.value !== '' || t.props.readOnly
             })}>{t.props.placeholder}</div>
             <input ref="input" className="tTextFieldInput"
                 type={t.props.type} value={t.props.value} readOnly={t.props.readOnly}

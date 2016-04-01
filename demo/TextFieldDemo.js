@@ -65,7 +65,11 @@ class Demo extends React.Component {
                 </GroupList>
                 <GroupList title="不可修改">
                     <TextField label="只读"
-                        value="不能更改" readOnly={true}/>
+                        value="不能更改\n不能更改" readOnly={true}/>
+                </GroupList>
+                <GroupList title="只读没有placeholder">
+                    <TextField label="不可修改"
+                               value="" readOnly={true}/>
                 </GroupList>
                 <GroupList title="上下结构">
                     <TextField placeholder="请输入"
